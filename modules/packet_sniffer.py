@@ -17,6 +17,8 @@ def main():
         eth_proto = socket.ntohs(proto)
 
         print(f"Ethernet Frame: {src_mac} -> {dest_mac}, Protocol: {eth_proto}, Length: {length}")
+        
+run_sniffer = main
 
 if __name__ == "__main__":
     main()
