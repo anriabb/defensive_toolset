@@ -1,4 +1,4 @@
-from modules import port_scanner
+from modules import port_scanner, packet_sniffer
 
 def main():
     print(" ")
@@ -8,7 +8,7 @@ def main():
     print(" ")
 
     print("1. Port Scanner")
-    print("...")
+    print("2. Packet Sniffer")
     print("_______________________")
     response = input("Enter the tool: ")
 
@@ -21,7 +21,11 @@ def main():
         end_port = int(input("End port: "))
         ports = range(start_port, end_port + 1)
         open_ports = port_scanner.scan_ports(host, ports)
-    
+    elif response == "2":
+        try:
+            packet_sniffer.run_sniffer()
+        except PermissionError:
+            print("Permission denied. Run this script as root (sudo) to use the sniffer.")
     
 
 
