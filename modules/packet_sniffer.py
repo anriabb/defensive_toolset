@@ -1,7 +1,6 @@
 import socket, struct
 
 def mac_addr(mac_bytes):
-    """Convert bytes to human-readable MAC address."""
     return ':'.join(f'{b:02x}' for b in mac_bytes)
 
 def main():
